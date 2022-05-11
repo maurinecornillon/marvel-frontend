@@ -1,23 +1,22 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 
 // components
-// import Header from "./components/Header";
+import Header from "./components/Header";
+import Menu from "./components/Menu";
 
-//Import des icones
-// import { library } from "@fortawesome/fontawesome-svg-core";
+import Characters from "./pages/Characters";
 
 function App() {
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
+      <Menu />
 
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/" element={<Offer />} />
-        <Route path="/" element={<SignUp handleToken={handleToken} />} /> */}
+        <Route path="/" element={<Characters />} />
       </Routes>
     </Router>
   );
