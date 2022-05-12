@@ -15,7 +15,7 @@ function Characters() {
       const response = await axios.get(
         `https://my-marvel-backend-app.herokuapp.com/characters?BYOWtcC4WgeuwKhj&page=${page}&title=${search}`
       );
-      console.log(response.data);
+
       setData(response.data);
       setIsLoading(false);
     };

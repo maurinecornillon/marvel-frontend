@@ -1,10 +1,8 @@
 import logo from "../assets/img/Logo.png";
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-// import { Link } from "react-router-dom";
-
-const Header = () => {
+const Header = ({ userToken, handleToken }) => {
   // const navigate = useNavigate();
 
   return (
@@ -16,6 +14,32 @@ const Header = () => {
               <img src={logo} alt="" />
             </div>
           </div>
+          <section className="right-header">
+            <div className="contact">
+              {!userToken ? (
+                <>
+                  <Link to="/signup">
+                    <button>S'inscrire</button>
+                  </Link>
+                  <br />
+                  <span className="space">{"|"}</span>
+                  <Link to="/login">
+                    <button>Connexion</button>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  onClick={() => {
+                    handleToken();
+                  }}
+                >
+                  Déconnexion
+                </button>
+              )}
+
+              <br />
+            </div>
+          </section>
         </div>
       </header>
     </>

@@ -19,12 +19,13 @@ const Menu = () => {
           <div>
             <span>Favourite comics</span>-
           </div>
-          <div>
-            <span>S'inscrire</span>-
+
+          {/* <div>
+            <span onClick={() => navigate("/signup")}>S'inscrire</span>-
           </div>
           <div>
-            <span>Se connecter</span>-
-          </div>
+            <span onClick={() => navigate("/login")}>Se connecter</span>-
+          </div> */}
         </nav>
       </div>
     </>

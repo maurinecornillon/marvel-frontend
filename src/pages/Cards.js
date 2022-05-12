@@ -74,7 +74,7 @@ const Details = () => {
     <p>Chargement en cours</p>
   ) : (
     <div className="titre">
-      <h1>Character Card</h1>
+      <h1>Fiche characters</h1>
       <div className="character-name">
         <p>{data.name}</p>
         <div className="characters-image">
@@ -84,7 +84,7 @@ const Details = () => {
           />
         </div>
         {data.description === "" ? (
-          <span>Sorry, no description available for this character !</span>
+          <span>Description non disponible pour ce personnage</span>
         ) : (
           <span>{data.description}</span>
         )}
@@ -105,7 +105,7 @@ const Details = () => {
               {element.description ? (
                 <p>{element.description}</p>
               ) : (
-                <p>Description not available</p>
+                <p>Description non disponible</p>
               )}
             </div>
           );

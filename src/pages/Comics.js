@@ -20,7 +20,7 @@ function Comics() {
       setIsLoading(false);
     };
     fetchData();
-  }, [page]);
+  }, [page, search]);
 
   return isLoading ? (
     <span>En cours de chargement... </span>
@@ -35,7 +35,13 @@ function Comics() {
           </button>
           <div className="Recherche-two">
             <FontAwesomeIcon className="icone" icon="magnifying-glass" />
-            <input type="text" placeholder="Rechercher..." />
+            <input
+              type="search"
+              placeholder="Search..."
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            />
           </div>
           <button className="page" onClick={() => setPage(page + 1)}>
             Page suivante
@@ -46,11 +52,7 @@ function Comics() {
         <div className="bloc">
           {data.results.map((element) => {
             return (
-              <Link
-                className="link"
-                key={element._id}
-                to={`details/${element._id}`}
-              >
+              <div className="link" key={element._id}>
                 <div className="character-card">
                   {localStorage.getItem(`fav${element._id}`)}
 
@@ -64,7 +66,7 @@ function Comics() {
                   <h3>{element.title}</h3>
                   <p>{element.description}</p>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>

@@ -26,6 +26,31 @@ body {
   width: 150px;
 }
 
+.right-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact {
+  display: flex;
+  background: none;
+}
+
+.contact button {
+  width: 80px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.contact button:hover {
+  cursor: pointer;
+}
+
+.space {
+  color: white;
+}
+
 /* MENU */
 
 .menu {
@@ -72,6 +97,7 @@ body {
   border: none;
   background-color: #f5f6f7;
   margin-left: 10px;
+  outline: 0;
 }
 
 .icone {
@@ -127,7 +153,6 @@ body {
 }
 
 .character-card {
-  border: red solid 2px;
   height: 300px;
   width: 200px;
   margin-bottom: 40px;
@@ -173,12 +198,14 @@ body {
 .character-card:hover {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
+  background-color: white;
+  color: #ff0000;
 }
 
 .character-card h3 {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -186,7 +213,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 8px;
   color: white;
-  text-align: center;
+  text-align: justify;
+  padding: 10px;
 }
 .link {
   text-decoration: none;
