@@ -8,11 +8,12 @@ function Comics() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://my-marvel-backend-app.herokuapp.com/comics?BYOWtcC4WgeuwKhj`
+        `https://my-marvel-backend-app.herokuapp.com/comics?BYOWtcC4WgeuwKhj&page=${page}&title=${search}`
       );
       console.log(response.data);
       setData(response.data);
@@ -67,12 +68,6 @@ function Comics() {
             );
           })}
         </div>
-      </div>
-
-      <div className="container-deux">
-        <button onClick={() => setPage(page - 1)}>Page précédente</button>
-
-        <button onClick={() => setPage(page + 1)}>Page suivante</button>
       </div>
     </>
   );
