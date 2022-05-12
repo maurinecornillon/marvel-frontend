@@ -1,11 +1,11 @@
 import logo from "../assets/img/Logo.png";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <>
