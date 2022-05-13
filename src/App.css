@@ -45,6 +45,7 @@ body {
 
 .contact button:hover {
   cursor: pointer;
+  text-decoration: underline red;
 }
 
 .space {
@@ -64,6 +65,15 @@ body {
   color: white;
   font-family: "Roboto Condensed", sans-serif;
   opacity: 0.8;
+  /* text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+    0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 10px 0 #1a1a1a,
+    0 10px 0 #181818, 0 10px 0 #161616, 0 14px 0 #141414, 0 10px 0 #121212,
+    0 22px 30px rgba(0, 0, 0, 0.9);
+ */
 }
 
 .menu span:hover {
@@ -140,7 +150,7 @@ body {
   opacity: 1;
 }
 
-/* CHARACTERS */
+/* CHARACTERS ET COMICS PAGE ROSTER */
 
 .bloc {
   display: flex;
@@ -180,7 +190,6 @@ body {
     0 100%,
     0 0
   );
-
   background-color: #ff0000;
 }
 
@@ -198,14 +207,32 @@ body {
 .character-card:hover {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
-  background-color: white;
-  color: #ff0000;
+  /* background-color: white; */
+  background-color: black;
+  cursor: default;
+  /* transition-timing-function: ease-in; */
+  /* background: red;
+  -webkit-transition: 0.9s ease-in-out;
+  transition: 0.9s ease-in-out;
+  background-image: linear-gradient(90deg, red, white); */
 }
 
 .character-card h3 {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: black;
+  color: white;
+  text-align: center;
+}
+
+.character-card h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.character-card h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: white;
   text-align: center;
 }
 
@@ -220,8 +247,48 @@ body {
   text-decoration: none;
 }
 
+.title-roster p {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+    0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+    0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+    0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
 /* CARD CHARACTERS */
 
 .titre {
   color: white;
 }
+
+.bloc-deux {
+  height: 300px;
+  width: 200px;
+  margin-bottom: 40px;
+
+  background-color: #ff0000;
+}
+
+.bloc-deux img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.comics-image img {
+  height: 200px;
+  width: 150px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* .pagination {
+  color: white;
+} */

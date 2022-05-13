@@ -48,6 +48,11 @@ function Comics() {
         </div>
         <br />
         <br />
+        <div className="title-roster">
+          <p>Comics</p>
+          <br />
+          <br />
+        </div>
         <div className="bloc">
           {data.results.map((element) => {
             return (
@@ -62,7 +67,7 @@ function Comics() {
                     />
                   </div>
 
-                  <h3>{element.title}</h3>
+                  <h2>{element.title}</h2>
                   <p>{element.description}</p>
                 </div>
               </div>

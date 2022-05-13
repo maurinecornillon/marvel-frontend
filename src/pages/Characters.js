@@ -33,6 +33,7 @@ function Characters() {
           <button className="page" onClick={() => setPage(page - 1)}>
             Page précédente
           </button>
+          <p className="pagination">{page}</p>
           <div className="Recherche-two">
             <FontAwesomeIcon className="icone" icon="magnifying-glass" />
             <input
@@ -49,6 +50,12 @@ function Characters() {
         </div>
         <br />
         <br />
+        <div className="title-roster">
+          <p>Characters</p>
+          <br />
+          <br />
+        </div>
+
         <div className="bloc">
           {data.results.map((element) => {
             return (
@@ -57,19 +64,22 @@ function Characters() {
                 key={element._id}
                 to={`/comics/${element._id}`}
               >
-                <div className="character-card">
-                  {/* {localStorage.getItem(`fav${element._id}`)} */}
+                {element.thumbnail.path !==
+                "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+                  <div className="character-card">
+                    <div className="character-card-img">
+                      <img
+                        src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                        alt=""
+                      />
+                    </div>
 
-                  <div className="character-card-img">
-                    <img
-                      src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                      alt=""
-                    />
+                    <h3>{element.name}</h3>
+                    {/* <p>{element.description}</p> */}
                   </div>
-
-                  <h3>{element.name}</h3>
-                  <p>{element.description}</p>
-                </div>
+                ) : (
+                  <div className="hidden"></div>
+                )}
               </Link>
             );
           })}
