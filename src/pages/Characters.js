@@ -59,28 +59,30 @@ function Characters() {
         <div className="bloc">
           {data.results.map((element) => {
             return (
-              <Link
-                className="link"
-                key={element._id}
-                to={`/comics/${element._id}`}
-              >
+              <>
                 {element.thumbnail.path !==
-                "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
-                  <div className="character-card">
-                    <div className="character-card-img">
-                      <img
-                        src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                        alt=""
-                      />
-                    </div>
+                  "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" &&
+                element.thumbnail.path !==
+                  "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708" ? (
+                  <Link
+                    className="link"
+                    key={element._id}
+                    to={`/comics/${element._id}`}
+                  >
+                    <div className="character-card">
+                      <div className="character-card-img">
+                        <img
+                          src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                          alt=""
+                        />
+                      </div>
 
-                    <h3>{element.name}</h3>
-                    {/* <p>{element.description}</p> */}
-                  </div>
-                ) : (
-                  <div className="hidden"></div>
-                )}
-              </Link>
+                      <h3>{element.name}</h3>
+                      {/* <p>{element.description}</p> */}
+                    </div>
+                  </Link>
+                ) : null}
+              </>
             );
           })}
         </div>
