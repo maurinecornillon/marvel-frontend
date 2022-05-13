@@ -34,7 +34,7 @@ const Details = () => {
       <div className="container">
         <hr />
         <hr />
-        <didv className="bloc-deux">
+        <div className="bloc-deux">
           <div className="titre">
             <h1>Fiche characters</h1>
             <div className="character-name">
@@ -52,26 +52,28 @@ const Details = () => {
               )}
             </div>
           </div>
-        </didv>
+        </div>
         <hr />
         <hr />
-        <h1>Featured comics</h1>
+        <br />
+        <h1 className="feat-comics">Featured comics</h1>
+        <br />
         <div className="character-comics">
           {data.comics.map((element) => {
             return (
               <div className="comics-card" key={element._id}>
-                <h3>{element.title}</h3>
+                {/* <h3>{element.title}</h3> */}
                 <div className="comics-image">
                   <img
                     src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
                     alt=""
                   />
                 </div>
-                {element.description ? (
+                {/* {element.description ? (
                   <p>{element.description}</p>
                 ) : (
                   <p>Description non disponible</p>
-                )}
+                )} */}
               </div>
             );
           })}

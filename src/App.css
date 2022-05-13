@@ -150,6 +150,10 @@ body {
   opacity: 1;
 }
 
+/* .pagination {
+  color: white;
+} */
+
 /* CHARACTERS ET COMICS PAGE ROSTER */
 
 .bloc {
@@ -190,6 +194,7 @@ body {
     0 100%,
     0 0
   );
+
   background-color: #ff0000;
 }
 
@@ -263,23 +268,38 @@ body {
 
 /* CARD CHARACTERS */
 
-.titre {
-  color: white;
-}
-
 .bloc-deux {
-  height: 300px;
-  width: 200px;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 
-  background-color: #ff0000;
+  height: auto;
 }
 
-.bloc-deux img {
+.feat-comics {
+  color: white;
+  text-align: center;
+}
+
+.titre {
+  border: red solid 1px;
+  height: 400px;
+  width: 300px;
+  color: white;
+  text-align: center;
+}
+
+.characters-image img {
   height: 200px;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0.9;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.characters-image img:hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  /* background-color: white; */
 }
 
 .comics-image img {
@@ -289,6 +309,6 @@ body {
   opacity: 0.9;
 }
 
-/* .pagination {
-  color: white;
-} */
+.character-comics {
+  display: flex;
+}

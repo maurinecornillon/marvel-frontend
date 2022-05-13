@@ -17,9 +17,13 @@ import LogIn from "./pages/LogIn";
 
 //Import des icones
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faAngleRight,
+  faAngleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMagnifyingGlass);
+library.add(faMagnifyingGlass, faAngleRight, faAngleLeft);
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
