@@ -19,13 +19,6 @@ const Menu = () => {
           <div>
             <span>Favourite comics</span>-
           </div>
-
-          {/* <div>
-            <span onClick={() => navigate("/signup")}>S'inscrire</span>-
-          </div>
-          <div>
-            <span onClick={() => navigate("/login")}>Se connecter</span>-
-          </div> */}
         </nav>
       </div>
     </>

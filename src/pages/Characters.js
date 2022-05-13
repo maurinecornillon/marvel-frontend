@@ -95,6 +95,14 @@ function Characters() {
                       </div>
 
                       <h3>{element.name}</h3>
+                      {/* <button
+                        onClick={() => {
+                          setRefreshFav(!refreshFav);
+                          setCookieFavoris(element._id, element.name);
+                        }}
+                      >
+                        Like
+                      </button> */}
                       {/* <p>{element.description}</p> */}
                     </div>
                   </Link>

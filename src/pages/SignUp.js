@@ -44,32 +44,36 @@ const SignUp = ({ handleToken }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="signup-container">
-        <h1>S'inscrire</h1>
+    <>
+      <br />
+      <hr />
+      <div>
+        <form onSubmit={handleSubmit} className="signup-container">
+          <h1>S'inscrire</h1>
 
-        <input
-          type="text"
-          placeholder="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <input
-          type="text"
-          placeholder="pseudo"
-          value={username}
-          onChange={handleUserChange}
-        />
-        <input
-          type="password"
-          placeholder="mot de passe"
-          value={password}
-          onChange={handlePasswordChange}
-        />
+          <input
+            type="text"
+            placeholder="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+          <input
+            type="text"
+            placeholder="pseudo"
+            value={username}
+            onChange={handleUserChange}
+          />
+          <input
+            type="password"
+            placeholder="mot de passe"
+            value={password}
+            onChange={handlePasswordChange}
+          />
 
-        <input className="sign" type="submit" value="S'inscrire" />
-      </form>
-    </div>
+          <input className="sign" type="submit" value="S'inscrire" />
+        </form>
+      </div>
+    </>
   );
 };
 

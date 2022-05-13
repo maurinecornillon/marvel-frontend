@@ -8,18 +8,19 @@ function Comics() {
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+  const [limit, setLimit] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://my-marvel-backend-app.herokuapp.com/comics?BYOWtcC4WgeuwKhj&page=${page}&title=${search}`
+        `https://my-marvel-backend-app.herokuapp.com/comics?BYOWtcC4WgeuwKhj&page=${page}&title=${search}&limit=${limit}`
       );
-      console.log(response.data);
+      setLimit(Math.ceil(response.data.count / response.data.limit));
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
-  }, [page, search]);
+  }, [page, search, limit]);
 
   return isLoading ? (
     <span>En cours de chargement... </span>
@@ -30,7 +31,15 @@ function Comics() {
         <br />
         <div className="Recherche">
           <button className="page" onClick={() => setPage(page - 1)}>
-            Page précédente
+            <FontAwesomeIcon
+              className="icone-deux"
+              icon="fa-solid fa-angle-left"
+            />
+            <FontAwesomeIcon
+              className="icone-deux"
+              icon="fa-solid fa-angle-left"
+            />
+            {page}/{limit}
           </button>
           <div className="Recherche-two">
             <FontAwesomeIcon className="icone" icon="magnifying-glass" />
@@ -43,7 +52,15 @@ function Comics() {
             />
           </div>
           <button className="page" onClick={() => setPage(page + 1)}>
-            Page suivante
+            {page}/{limit}
+            <FontAwesomeIcon
+              className="icone-deux"
+              icon="fa-solid fa-angle-right"
+            />
+            <FontAwesomeIcon
+              className="icone-deux"
+              icon="fa-solid fa-angle-right"
+            />
           </button>
         </div>
         <br />
@@ -56,21 +73,29 @@ function Comics() {
         <div className="bloc">
           {data.results.map((element) => {
             return (
-              <div className="link" key={element._id}>
-                <div className="character-card">
-                  {localStorage.getItem(`fav${element._id}`)}
+              <>
+                {element.thumbnail.path !==
+                  "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" &&
+                element.thumbnail.path !==
+                  "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708" ? (
+                  <div className="link" key={element._id}>
+                    <div className="character-card">
+                      {localStorage.getItem(`fav${element._id}`)}
 
-                  <div className="character-card-img">
-                    <img
-                      src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                      alt=""
-                    />
+                      <div className="character-card-img">
+                        <img
+                          src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                          alt=""
+                        />
+                      </div>
+
+                      <h2>{element.title}</h2>
+
+                      <p>{element.description}</p>
+                    </div>
                   </div>
-
-                  <h2>{element.title}</h2>
-                  <p>{element.description}</p>
-                </div>
-              </div>
+                ) : null}
+              </>
             );
           })}
         </div>

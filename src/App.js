@@ -28,7 +28,7 @@ library.add(faMagnifyingGlass, faAngleRight, faAngleLeft);
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
 
-  const handleToken = (token) => {
+  const handleToken = (token, user) => {
     if (token) {
       console.log("Création d'un cookie");
       Cookies.set("userToken", token, { expires: 7 });
