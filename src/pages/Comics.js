@@ -80,8 +80,6 @@ function Comics() {
                   "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708" ? (
                   <div className="link" key={element._id}>
                     <div className="character-card">
-                      {localStorage.getItem(`fav${element._id}`)}
-
                       <div className="character-card-img">
                         <img
                           src={`${element.thumbnail.path}.${element.thumbnail.extension}`}

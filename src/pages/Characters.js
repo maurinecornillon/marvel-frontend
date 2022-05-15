@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +10,7 @@ function Characters() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [limit, setLimit] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -81,31 +82,20 @@ function Characters() {
                   "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" &&
                 element.thumbnail.path !==
                   "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708" ? (
-                  <Link
-                    className="link"
-                    key={element._id}
-                    to={`/comics/${element._id}`}
-                  >
-                    <div className="character-card">
-                      <div className="character-card-img">
-                        <img
-                          src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
-                          alt=""
-                        />
-                      </div>
-
-                      <h3>{element.name}</h3>
-                      {/* <button
-                        onClick={() => {
-                          setRefreshFav(!refreshFav);
-                          setCookieFavoris(element._id, element.name);
-                        }}
-                      >
-                        Like
-                      </button> */}
-                      {/* <p>{element.description}</p> */}
+                  <div key={element._id} className="character-card">
+                    <div className="character-card-img">
+                      <img
+                        src={`${element.thumbnail.path}.${element.thumbnail.extension}`}
+                        alt=""
+                      />
                     </div>
-                  </Link>
+
+                    <h3 onClick={() => navigate(`/comics/${element._id}`)}>
+                      {element.name}
+                    </h3>
+                    {/* <button className="bouton-fav">Fav</button> */}
+                    {/* <p>{element.description}</p> */}
+                  </div>
                 ) : null}
               </>
             );

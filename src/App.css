@@ -341,6 +341,11 @@ body {
   text-align: justify;
   padding: 10px;
 }
+.bouton-fav {
+  background: none;
+  border: none;
+  color: white;
+}
 
 /* CARD CHARACTERS */
 
@@ -414,8 +419,6 @@ h1 {
 }
 
 /* SIGNUP */
-
-/* signup */
 
 .signup-container {
   display: flex;
